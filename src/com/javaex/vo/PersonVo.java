@@ -7,6 +7,7 @@ public class PersonVo {
 	private String hp;
 	private String company;
 	
+	
 	public PersonVo(String name, String hp, String company) {
 		this.name = name;
 		this.hp = hp;

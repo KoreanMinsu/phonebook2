@@ -102,6 +102,10 @@ public class PhoneController extends HttpServlet {
 
 		//값 넣기 
 			PersonVo personVo = new PersonVo(idNum, name, hp, company);
+		
+		//db 반영	
+			phoneDao.personUpdate(personVo);
+			
 
 		//리 다이렉트
 			response.sendRedirect("phonebook2/pbc?action=list");
@@ -115,10 +119,10 @@ public class PhoneController extends HttpServlet {
 			
 	    //삭제하기
 			PhoneDao phoneDao = new PhoneDao();
-			int count = phoneDao.personDelete(idNum);
-			if (count>0) {
-				System.out.println(count+"건이 삭제됨");
-			}
+		
+		//db 반영	
+			phoneDao.personDelete(idNum);
+			
 			
 		//리 다이렉트
 			response.sendRedirect("phonebook2/pbc?action=list");
